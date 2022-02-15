@@ -1,0 +1,22 @@
+@import '../../../config-scss/rem-calc.scss';
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+tr.mat-header-row {
+  height: rem-calc(50);
+  background-color: var(--black);
+}
+
+th.mat-header-cell {
+  padding: rem-calc(12.5);
+  margin: auto;
+  text-align: left;
+  max-width: 300px;
+  color: var(--white);
+  font-size: rem-calc(14);
+  font-weight: bold;
+}
