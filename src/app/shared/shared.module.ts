@@ -5,23 +5,24 @@ import { CommonModule } from '@angular/common';
 
 //Components
 import { IndicHeaderComponent } from './indic-header/indic-header.component';
-import { CardsComponent } from './cards/cards.component';
+import { IndicCardsComponent } from './indic-cards/indic-cards.component';
 import { IndicListComponent } from './indic-list/indic-list.component';
 import { RouterModule } from '@angular/router';
 import { AppMaterialModule } from "../app.material.module";
-
-
+import { IndicLeftbarComponent } from './indic-leftbar/indic-leftbar.component';
 
 @NgModule({
   declarations: [
     IndicHeaderComponent,
-    CardsComponent,
-    IndicListComponent
+    IndicCardsComponent,
+    IndicListComponent,
+    IndicLeftbarComponent
   ],
   exports: [
     IndicHeaderComponent,
-    CardsComponent,
-    IndicListComponent
+    IndicCardsComponent,
+    IndicListComponent,
+    IndicLeftbarComponent
   ],
   imports: [
     CommonModule,

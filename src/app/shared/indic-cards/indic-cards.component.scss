@@ -1,0 +1,21 @@
+@import '../../../config-scss/rem-calc.scss';
+
+.content{
+    text-align: left;
+    margin-bottom: 16px;
+    mat-card{
+        color: var(--cyan);
+        &:hover{
+            background-color: var(--cyan);
+            color: var(--white);
+        }
+    }
+}
+
+button.mat-raised-button{
+    background-color: var(--light-cyan);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--white);
+    font-size: rem-calc(16);
+}

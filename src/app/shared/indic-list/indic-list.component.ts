@@ -10,7 +10,7 @@ import { Indication } from '../model/indication';
 })
 export class IndicListComponent implements OnInit {
     // columns we will show on the table
-  public displayedColumns = ['nome', 'corretor', 'status'];
+  public displayedColumns = ['nome', 'corretor', 'status', 'icones'];
   public dataSource: Indication[] = [];
 
   constructor(

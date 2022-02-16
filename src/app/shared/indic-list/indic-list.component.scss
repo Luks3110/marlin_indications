@@ -1,5 +1,14 @@
 @import '../../../config-scss/rem-calc.scss';
 
+h1{
+  text-align: left;
+  font-size: rem-calc(24);
+  font-weight: bold;
+  color: var(--black);
+  padding-top: rem-calc(32);
+  padding-bottom: rem-calc(32);
+}
+
 table {
   width: 100%;
   overflow-x: auto;
@@ -9,14 +18,34 @@ table {
 tr.mat-header-row {
   height: rem-calc(50);
   background-color: var(--black);
+  justify-content: flex-start;
 }
 
 th.mat-header-cell {
   padding: rem-calc(12.5);
   margin: auto;
   text-align: left;
-  max-width: 300px;
   color: var(--white);
   font-size: rem-calc(14);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mat-row{
+  font-family:'Open Sans', sans-serif;
+  
+}
+
+.mat-row:nth-child(n+1){
+  background: var(--gray-list);
+}
+.mat-row:not(:nth-child(2n+1)){
+  background-color:var(--white);
+}
+
+.footer {
+  height: rem-calc(50);
+  background-color: var(--black);
+  justify-content: flex-start;
 }

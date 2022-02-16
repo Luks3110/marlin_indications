@@ -1,1 +1,55 @@
-<p>details works!</p>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <a href="/">
+      <h4>Menu</h4>
+    </a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <indic-header></indic-header>
+    <div class="detalhes">
+        <a href="/">
+            <fa-icon [icon]="arrowIcon"></fa-icon>
+            <span>voltar para a página anterior</span>
+        </a>
+      <h1>Cadastro de novas indicações</h1>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Dados do Cliente</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="profileForm">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Nome Completo</span>
+                <input type="text" formControlName="nome" id="nome"
+                  placeholder="Digite aqui o nome completo do cliente">
+              </div>
+              <div class="input-box">
+                <span class="details">Telefone</span>
+                <input type="phone" formControlName="telefone" id="telefone" placeholder="DDD + Telefone">
+              </div>
+              <div class="input-box">
+                <span class="details">Empresa - opcional</span>
+                <input type="phone" formControlName="telefone" id="telefone"
+                  placeholder="Digite aqui o nome da empresa">
+              </div>
+              <div class="input-box">
+                <span class="details">E-mail</span>
+                <input type="email" formControlName="email" id="email" placeholder="Insira aqui o e-mail do cliente">
+              </div>
+              <div class="input-box">
+                <span class="details">Corretor</span>
+                <input type="text" formControlName="corretor" id="corretor"
+                  placeholder="Digite aqui o nome do corretor">
+              </div>
+            </div>
+            <div class="buttons">
+              <button mat-raised-button type="cancel" class="btn__cancel">Cancelar</button>
+              <button mat-raised-button type="submit" class="btn__submit">Salvar e Continuar</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

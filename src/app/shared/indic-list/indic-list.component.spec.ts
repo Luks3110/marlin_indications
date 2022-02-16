@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { IndicListComponent } from './indic-list.component';
 
 describe('IndicListComponent', () => {

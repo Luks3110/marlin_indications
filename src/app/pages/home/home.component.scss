@@ -1,0 +1,30 @@
+@import '../../../config-scss/rem-calc.scss';
+
+.listagem{
+   height: 100%;
+   margin: rem-calc(16);
+   margin-left: rem-calc(32);
+   margin-top: rem-calc(55);
+}
+
+h4{
+    color: var(--white);
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+mat-sidenav{
+    width: rem-calc(201);
+    border-right: none;
+    background-color: var(--cyan);
+    padding: rem-calc(16);
+    text-align: center;
+}
+
+mat-sidenav-container{
+    height: 100%;
+}
