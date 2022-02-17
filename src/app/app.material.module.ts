@@ -10,6 +10,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
 // since we're exporting these modules, add them to export
     exports: [
@@ -23,7 +25,9 @@ import {ReactiveFormsModule} from '@angular/forms';
         MatCardModule,
         MatSidenavModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatDividerModule,
+        MatDialogModule
     ]
 })
 export class AppMaterialModule {}

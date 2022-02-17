@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from "@angular/material/table";
 import { IndicApiService } from 'src/app/service/indic-api.service';
 import { Indication } from '../model/indication';
+
 
 @Component({
   selector: 'indic-list',
@@ -12,6 +12,7 @@ export class IndicListComponent implements OnInit {
     // columns we will show on the table
   public displayedColumns = ['nome', 'corretor', 'status', 'icones'];
   public dataSource: Indication[] = [];
+  public details: any;
 
   constructor(
     private indicApiService: IndicApiService
@@ -24,10 +25,14 @@ export class IndicListComponent implements OnInit {
   getIndicInformation(){
     this.indicApiService.apiListAllIndications()
     .subscribe((res) => {
-      console.log(res);
       this.dataSource = res;
-      console.log(this.dataSource);
     })
   }
-
-}
+  removeIndic(id: number){
+    this.indicApiService.apiDeleteIndication(id)
+    .subscribe(
+      success => this.getIndicInformation(),
+      error => console.error(error)
+    );
+    }
+  }

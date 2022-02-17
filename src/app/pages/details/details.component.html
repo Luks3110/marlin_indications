@@ -1,55 +1,79 @@
 <mat-sidenav-container>
   <mat-sidenav mode="side" opened>
-    <a href="/">
+    <a routerLink="/">
       <h4>Menu</h4>
     </a>
   </mat-sidenav>
   <mat-sidenav-content>
     <indic-header></indic-header>
     <div class="detalhes">
-        <a href="/">
-            <fa-icon [icon]="arrowIcon"></fa-icon>
-            <span>voltar para a página anterior</span>
-        </a>
-      <h1>Cadastro de novas indicações</h1>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Dados do Cliente</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <form [formGroup]="profileForm">
-            <div class="user-details">
-              <div class="input-box">
-                <span class="details">Nome Completo</span>
-                <input type="text" formControlName="nome" id="nome"
-                  placeholder="Digite aqui o nome completo do cliente">
+      <a routerLink="/">
+        <fa-icon [icon]="arrowIcon"></fa-icon>
+        <span>voltar para a página anterior</span>
+      </a>
+      <div>
+        <ng-template [ngIf]="isLoading">
+          <h1>Detalhes da indicação</h1>
+          <div class="content">
+            <div fxLayout="row wrap" fxLayoutGap="40px grid">
+              <div fxFlex="45%" fxFlex.xs="80%" fxFlex.sm="45%">
+                <mat-card class="mat-elevation-z4 info">
+                  <mat-card-header>
+                    <mat-card-title class="info">
+                        <p>Informações básicas</p>
+                        <fa-icon [icon]="penIcon"></fa-icon>
+                    </mat-card-title>
+                  </mat-card-header>
+                  <mat-divider></mat-divider>
+                  <mat-card-content>
+                    <form>
+                      <div class="user-details">
+                        <div class="name-input">
+                          <span class="details">Nome Completo</span>
+                          <p> {{details.nome}} </p>
+                        </div>
+                        <div class="input-box">
+                          <span class="details">Telefone</span>
+                          <p> {{details.telefone}} </p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">E-mail</span>
+                            <p> {{details.email}} </p>
+                          </div>
+                        <div class="input-box">
+                          <span class="details">Empresa</span>
+                          <p> {{details.empresa}} </p>
+                        </div>
+                        
+                        <div class="input-box">
+                          <span class="details">Corretor</span>
+                          <p> {{details.corretor}} </p>
+                        </div>
+                      </div>
+                    </form>
+                  </mat-card-content>
+                </mat-card>
               </div>
-              <div class="input-box">
-                <span class="details">Telefone</span>
-                <input type="phone" formControlName="telefone" id="telefone" placeholder="DDD + Telefone">
-              </div>
-              <div class="input-box">
-                <span class="details">Empresa - opcional</span>
-                <input type="phone" formControlName="telefone" id="telefone"
-                  placeholder="Digite aqui o nome da empresa">
-              </div>
-              <div class="input-box">
-                <span class="details">E-mail</span>
-                <input type="email" formControlName="email" id="email" placeholder="Insira aqui o e-mail do cliente">
-              </div>
-              <div class="input-box">
-                <span class="details">Corretor</span>
-                <input type="text" formControlName="corretor" id="corretor"
-                  placeholder="Digite aqui o nome do corretor">
+              <div fxFlex="45%" fxFlex.xs="80%" fxFlex.sm="45%">
+                <mat-card class="mat-elevation-z4">
+                  <mat-card-header>
+                    <mat-card-title class="status">
+                      Status:
+                      <div>
+                        <p [ngStyle]="{'color': '#007508', 'font-weight': 'bold', 'font-size': '14px' }"
+                          *ngIf="details.corretor">PROPOSTA FECHADA <fa-icon [icon]="penIcon"></fa-icon></p>
+                        <p [ngStyle]="{'color': '#AA6600', 'font-weight': 'bold', 'font-size': '14px'}"
+                          *ngIf="!details.corretor">SEM CORRETOR <fa-icon [icon]="penIcon"></fa-icon></p>
+                      </div>
+                    </mat-card-title>
+                  </mat-card-header>
+                </mat-card>
               </div>
             </div>
-            <div class="buttons">
-              <button mat-raised-button type="cancel" class="btn__cancel">Cancelar</button>
-              <button mat-raised-button type="submit" class="btn__submit">Salvar e Continuar</button>
-            </div>
-          </form>
-        </mat-card-content>
-      </mat-card>
+          </div>
+        </ng-template>
+      </div>
     </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

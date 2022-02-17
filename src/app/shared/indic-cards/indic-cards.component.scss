@@ -4,6 +4,12 @@
     text-align: left;
     margin-bottom: 16px;
     mat-card{
+        mat-card-title{
+            font-size: rem-calc(40);
+        }
+        mat-card-content{
+            font-size: rem-calc(12);
+        }
         color: var(--cyan);
         &:hover{
             background-color: var(--cyan);

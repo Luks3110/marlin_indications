@@ -3,7 +3,7 @@
          Indicações
      </h1>
 
-<table mat-table [dataSource]="dataSource">
+<table mat-table mat-sort [dataSource]="dataSource">
     <!--Nome Column-->
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef>Nome</th>
@@ -24,21 +24,25 @@
     </ng-container>
     <ng-container matColumnDef="empresa">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element"> 
-            <img [ngStyle]="{'padding': '5px'}" width="25" height="25" src="../../../assets/detalhes.png" alt="Detalhes" />
-            <img [ngStyle]="{'padding': '5px'}" width="25" height="25" src="../../../assets/lixeira.png" alt="Detalhes" />
+        <td mat-cell *matCellDef="let element">
+            <a routerLink="details/{{element.id}}"><img [ngStyle]="{'padding': '5px'}" width="25" height="25" src="../../../assets/detalhes.png" alt="Detalhes" /></a>
+            <img [ngStyle]="{'padding': '5px'}" width="25" height="25"  src="../../../assets/lixeira.png" alt="Detalhes" />
          </td>
       </ng-container>
       <ng-container matColumnDef="icones">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element"> 
-            <img [ngStyle]="{'padding': '5px'}" width="25" height="25" src="../../../assets/detalhes.png" alt="Detalhes" />
-            <img [ngStyle]="{'padding': '5px'}" width="25" height="25" src="../../../assets/lixeira.png" alt="Detalhes" />
+            <img [routerLink]="'details/'+ element.id" [ngStyle]="{'padding': '5px'}" width="25" height="25" src="../../../assets/detalhes.png" alt="Detalhes" />
+            <img (click)="removeIndic(element.id)" [ngStyle]="{'padding': '5px'}" width="25" height="25" src="../../../assets/lixeira.png" alt="Detalhes" />
          </td>
       </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    
   </table>
+  <mat-paginator [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page">
+</mat-paginator>
   
 </div>

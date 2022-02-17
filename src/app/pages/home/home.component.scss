@@ -1,5 +1,8 @@
 @import '../../../config-scss/rem-calc.scss';
 
+$small: rem-calc(300);
+$medium: rem-calc(900);
+
 .listagem{
    height: 100%;
    margin: rem-calc(16);
@@ -18,11 +21,19 @@ a{
 }
 
 mat-sidenav{
-    width: rem-calc(201);
+    width: 15%;
     border-right: none;
     background-color: var(--cyan);
     padding: rem-calc(16);
     text-align: center;
+
+    @media screen and (max-width: $small) {
+        width: 15%
+      }
+    
+      @media screen and (max-width: $medium) {
+        width: 15%;
+      }
 }
 
 mat-sidenav-container{
